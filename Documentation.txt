@@ -1,0 +1,5 @@
+I was finally able to get django set up properly by using virtualenvwrapper (following the instructions
+provided by virtual envwrapper). I also specified the interpreter as python3.4 when I installed django.
+To be clear, I followed the instructions on digitalocean's page to a tee except I set up the virtual env using virtualenvwrapper. I used this command "mkvirtualenv vertron --python=python3.4"
+
+Also, to set up postgresql, I had to create the user in postgres and on linux.
