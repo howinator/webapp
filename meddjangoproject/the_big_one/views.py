@@ -16,3 +16,8 @@ def doctor(request, doctor_id):
   doctor = get_object_or_404(Doctor, pk=doctor_id)
   return render(request, 'doctors/doctor_detail.html', {'doctor': doctor})
 
+# TODO This needs to get turned into an actual 404 page that re-directs to
+# either doctors or doctor visits
+def core_404_page(request):
+  return HttpResponse("Oops! This page doesn't exist. Please navigate to \
+  another page.")
