@@ -3,3 +3,4 @@ Envs/*
 *.sqlite3
 *.pyc
 *.swp
+.DS_Store
