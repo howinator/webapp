@@ -1,0 +1,19 @@
+.nav {
+  padding-top: 10px;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav a {
+  padding: 140px 25px;
+}
+
+.nav ul {
+  padding-left: 1px;
+}
+
+.nav .container {
+  padding-left: 1px;
+}

@@ -27,4 +27,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^core/', include('the_big_one.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'homepage.views.index'),
 ]
