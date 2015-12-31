@@ -8,12 +8,11 @@ class Address(models.Model):
   city = models.CharField(max_length = 150)
   state = USStateField(max_length = 2)
   zip_code = USZipCodeField(max_length = 10)
-  street_number = models.CharField(max_length = 15, blank = True)
-  street_name = models.CharField(max_length = 200, blank = True)
   is_active = models.BooleanField(
       verbose_name = 'is address actively being used', 
       default = True)
   user_submitted = models.BooleanField(default = False)
+
   # Two time stamp fields
   # auto_now_add time stamps when it is first created
   date_entered = models.DateTimeField(
