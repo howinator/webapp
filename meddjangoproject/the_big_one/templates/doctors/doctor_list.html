@@ -1,0 +1,8 @@
+<h1>Doctors</h1>
+<ul>
+{% for doctor in submitted_doctors %}
+        <li>{{ doctor }} - Located at: {{ doctor.address }}</li>
+{% empty %}
+        <li>No doctors in the db.</li>
+{% endfor %}
+</ul>
