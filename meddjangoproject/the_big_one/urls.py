@@ -10,11 +10,11 @@ from the_big_one.views import DoctorListView, DoctorDetailView
 # This is fed from www.medron.org/core
 urlpatterns = [
     url(r'^$', views.core_404_page, name='core_404'),
-    url(r'^doctors/*$', DoctorListView.as_view(), name = "doctor-list"),
+    url(r'^doctors/*$', DoctorListView.as_view(), name = "doctor_list"),
     url(r'^doctors/(?P<pk>[0-9]+)/$', 
             DoctorDetailView.as_view(), 
             name='doctor'),
-
+    url(r'^doctors/new/*$', views.new_doctor, name='new_doctor'),
     ]
 
 # points to FBV for doctor index if I ever need it
