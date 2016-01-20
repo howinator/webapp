@@ -1,8 +1,8 @@
 <form action="/core/doctors/new/" method="post">
     {% csrf_token %}
     <h2> Doctor Info:</h2>
-    {{ doctor_form }}
+    {{ doctor_form.as_p }}
     <h2> Address Info:</h2>
-    {{ address_form }}
+    {{ address_form.as_p }}
     <button type="submit" value="Submit">Create Doctor</button>
 </form>

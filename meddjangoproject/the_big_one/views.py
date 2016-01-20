@@ -10,29 +10,34 @@ from .forms import AddressForm, DoctorForm
 def new_doctor(request):
   
   if request.method == 'POST':
+    print(request.POST)
+    print("REQUEST GET!!", request.GET)
     print("request.method == POST")
-    doc_form = DoctorForm(request.POST, prefix = "doc_form")
-    print("instantiated DoctorForm")
-    address_form = AddressForm(request.POST, prefix = "address_form")
+    doctor_form = DoctorForm(request.POST, prefix = "doctor")
+    print("instantiated DoctorForm", doctor_form.is_bound)
+    address_form = AddressForm(request.POST, prefix = "address")
     print("instantiated addressform")
-    print(address_form['city'].value())
+    print(doctor_form['first_name'])
+    print("doc_form valid", doctor_form.is_valid())
 
-    if doc_form.is_valid() and address_form.is_valid():
+    if doctor_form.is_valid() and address_form.is_valid():
       # Save the address object to database first so that it can be used
       # by the doctor object
       print("forms valid")
       address = address_form.save()
-      doctor = doc_form.save(commit = False)
+      doctor = doctor_form.save(commit = False)
       doctor.address = address
       doctor.save()
       return HttpResponseRedirect(reverse('doctor_list'))
   else:
-    doc_form = DoctorForm(prefix = "doctor")
+    doctor_form = DoctorForm(prefix = "doctor")
+    print("doc_form get instant")
     address_form = AddressForm(prefix = "address")
+    print("address_form get instant")
 
   return render(request, 
                 'doctors/create_doctor.html',
-                {'doctor_form': doc_form, 'address_form': address_form})
+                {'doctor_form': doctor_form, 'address_form': address_form})
 
 
 
