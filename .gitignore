@@ -4,3 +4,5 @@ Envs/*
 *.pyc
 *.swp
 .DS_Store
+meddjangoproject/homepage/.ropeproject/
+meddjangoproject/the_big_one/.ropeproject
